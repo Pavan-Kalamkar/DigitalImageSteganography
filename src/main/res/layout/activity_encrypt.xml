@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_encrypt"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+  <LinearLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:ignore="UselessParent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryBlack"
+        android:text="@string/select_image_title"
+        android:textSize="@dimen/medium_text_dim"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:layout_width="@dimen/large_image_square"
+        android:layout_height="@dimen/large_image_square"
+        android:layout_gravity="center"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:contentDescription="@string/select_image_title"
+        android:id="@+id/ivCoverImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/secret_message_title"
+        android:textSize="@dimen/medium_text_dim"
+        android:textColor="@color/colorPrimaryBlack"
+        android:layout_gravity="center"/>
+
+    <RadioGroup
+        android:id="@+id/rgSecretMessageType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+      <RadioButton
+          android:id="@+id/rbText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:checked="true"
+          android:minHeight="48dp"
+          android:text="@string/rb_secret_text" />
+
+      <RadioButton
+          android:id="@+id/rbImage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:minHeight="48dp"
+          android:text="@string/rb_secret_image" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etSecretMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/et_secret_text"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp" />
+
+    <ImageView
+        android:layout_width="@dimen/large_image_square"
+        android:layout_height="@dimen/large_image_square"
+        android:layout_gravity="center"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/ivSecretImage"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="@string/b_secret_text_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryWhite"
+        app:backgroundTint="@color/colorBlueGreySecondary"
+        android:id="@+id/bEncrypt"/>
+
+  </LinearLayout>
+
+</LinearLayout>
